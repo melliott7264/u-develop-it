@@ -65,7 +65,7 @@ app.delete('/api/candidate/:id', (req, res) => {
     db.query(sql, params, (err, result) => {
         if (err) {
             // why was res.message used instead of err.message
-            res.status(400).json({error: res.message});
+            res.status(400).json({error: err.message});
         } else if (!result.affectedRows) {
             res.json({
                 message: 'Candidate not found'
