@@ -89,7 +89,7 @@ app.get('/api/parties/:id', (req,res)=> {
     });
 });
 
-// query for delete operation
+// query for delete operation for candidates
 app.delete('/api/candidates/:id', (req, res) => {
     const sql = 'DELETE FROM candidates WHERE id=?';
     const params = [req.params.id];
@@ -136,7 +136,7 @@ app.delete('/api/parties/:id', (req, res) => {
 
 
 
-// query for create operation
+// query for create operation for candidates
 app.post('/api/candidate', ({body}, res) => {
 
     const errors = inputCheck(body, 'first_name', 'last_name', 'industry_connected');
