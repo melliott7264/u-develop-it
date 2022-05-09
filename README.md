@@ -2,16 +2,10 @@
 
 ## Description
 
-This is an online full stack application with a SQL database backend for handling the officer voting at U Develop It.
+This is an online full stack application with a SQL database backend for handling the officer voting at U Develop It.  This application tracked candidates, parties, voters and votes requiring a SQL table for each.   This application was an opportunity to build SQL and Node.js skills.  This project only involved building the back-end.  Another team is building the front-end.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
 ## Table of Contents
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -20,27 +14,18 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+This application requires that a MYSQL server be installed and running on the server.   Once running, there are three files in the db folder that need to be executed from within MySQL to build the database.  However, before doing that, this application will have to be cloned to a local folder on the server from GitHub:  https://github.com/melliott7264/u-develop-it.   Once cloned, from the root of the installation folder where the package.json file resides, run "npm install".  This assumes that npm has already been installed on your server along with MySQL.   The "npm install" will install all the dependencies including Express and the MySQL2 middleware.  At this point you can log onto the MySQL shell and run the following instructions to build the database:  "./db/db.sql;", ".db/schema.sql", ".db/seeds.sql".   Finally start the server by executing "npm start".   You should receive a message that the server is now running on port 3001.  
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+As this is a backend application only,  the functionality must be accessed through the yet to developed front-end application.   All the required CRUD functionality is accessible through the routes defined in candidateRoutes.js, partyRoutes.js, voterRoutes.js, and voteRoutes.js in the /routes/apiRoutes folder.   See these files for the details of the api calls.  All the calls are on either /api/candidates, /api/parties, /api/voters, or /api/votes.   I have used the plural for all the calls to keeps things simpler.   
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
 Mark Elliott  https://github.com/melliott7264
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+This application was build as an exercise of Module 12 of the University of Richmond Coding Boot Camp.   Most of the code was provided.
 
 ## License
 
@@ -66,22 +51,7 @@ SOFTWARE.
 
 ---
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+There is a JEST test of the inputCheck.js function in the /utils folder.  This function checks for proper input before being passed to the back-end SQL queries.   "npm test" will run the test routine.
